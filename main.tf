@@ -7,3 +7,10 @@ module "vpc" {
   # private_subnet_cidr_blocks = var.private_subnet_cidr_blocks   # Uncomment to set specific cidr blocks
 }
 
+module "security" {
+  source = "./modules/security"
+
+  vpc_id   = module.vpc.vpc_id
+  vpc_name = var.vpc_name
+}
+
