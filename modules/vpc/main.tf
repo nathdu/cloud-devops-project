@@ -64,9 +64,24 @@ resource "aws_route_table" "public_rt" {
   }
 }
 
+resource "aws_nat_gateway" "nat_gateway" {
+  count = length(aws_subnet.private_subnet)
+  connectivity_type = "private"
+  subnet_id = aws_subnet.private_subnet[count.index].id
+  tags = {
+    "Name" = "VapourOpsNatGateway"
+  }
+}
+
 # Routing table for private subnets
 resource "aws_route_table" "private_rt" {
+  count = length(aws_subnet.private_subnet)
   vpc_id = aws_vpc.vapourops_vpc.id
+
+  route {
+    cidr_block = aws_subnet.private_subnet[count.index].cidr_block
+    nat_gateway_id = aws_nat_gateway.nat_gateway[count.index].id
+  }
 
   tags = {
     Name = "${var.vpc_name}_private_rt"
@@ -86,5 +101,5 @@ resource "aws_route_table_association" "private_rta" {
   count = length(aws_subnet.private_subnet)
 
   subnet_id      = aws_subnet.private_subnet[count.index].id
-  route_table_id = aws_route_table.private_rt.id
+  route_table_id = aws_route_table.private_rt[count.index].id
 }

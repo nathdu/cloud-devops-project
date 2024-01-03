@@ -19,3 +19,10 @@ module "database" {
   vpc_security_group_ids = [module.security.web_sg_id]
   public_subnet_ids = module.vpc.public_subnet_ids
 }
+module "eks_cluster" {
+    source          = "./modules/eks"
+    vpc_id          = module.vpc.vpc_id
+    # private_subnets = module.vpc.private_subnet_ids
+    public_subnets = module.vpc.public_subnet_ids
+    cluster_name    = var.cluster_name
+} 
