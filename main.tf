@@ -14,6 +14,11 @@ module "security" {
   vpc_name = var.vpc_name
 }
 
+module "database" {
+  source   = "./modules/database"
+  vpc_security_group_ids = [module.security.web_sg_id]
+  public_subnet_ids = module.vpc.public_subnet_ids
+}
 module "eks_cluster" {
     source          = "./modules/eks"
     vpc_id          = module.vpc.vpc_id
