@@ -36,6 +36,14 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # Ingress Rule for postgresql port 5432
+  ingress {
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(data.http.myipaddr.response_body)}/32"]
+  }
+
   # Egress Rule - Allow all outbound traffic
   egress {
     from_port   = 0
@@ -50,5 +58,5 @@ resource "aws_security_group" "web_sg" {
 }
 
 data "http" "myipaddr" {
-   url = "http://icanhazip.com"
+  url = "http://icanhazip.com"
 }
