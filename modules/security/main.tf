@@ -58,5 +58,5 @@ resource "aws_security_group" "web_sg" {
 }
 
 data "http" "myipaddr" {
-  url = "http://icanhazip.com"
+  url = "http://ipv4.icanhazip.com"
 }
