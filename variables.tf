@@ -7,3 +7,7 @@ variable "ec2_type" {}
 variable "cluster_name" { 
     default = "vapourops" 
     }
+    variable "docker_image_name" {
+  default = "java-server:1.0.0"
+}
+
