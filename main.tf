@@ -26,5 +26,4 @@ module "eks_cluster" {
 # module "ecr" {
 #   source = "./modules/ecr"
 #   docker_image_name = var.docker_image_name
-
 # }
