@@ -1,17 +1,18 @@
-resource "aws_db_instance" "default" {
-  allocated_storage      = 20
-  identifier             = "testdb"
-  db_name                = "testdb"
-  engine                 = "postgres"
-  engine_version         = "14.9"
-  instance_class         = "db.t3.micro"
-  username             = data.aws_secretsmanager_secret_version.POSTGRES_USERNAME.secret_string
-  password             = data.aws_secretsmanager_secret_version.POSTGRES_PASSWORD.secret_string
-  skip_final_snapshot    = true
-  port                   = 5432
-  vpc_security_group_ids = var.vpc_security_group_ids
-  db_subnet_group_name   = aws_db_subnet_group.public_subnets.name
-  publicly_accessible = true
+resource "aws_db_instance" "rds-db" {
+  allocated_storage = 20
+  identifier        = "testdb"
+  db_name           = "testdb"
+  engine            = "postgres"
+  engine_version    = "14.9"
+
+  instance_class      = "db.t3.micro"
+  username            = data.aws_secretsmanager_secret_version.POSTGRES_USERNAME.secret_string
+  password            = data.aws_secretsmanager_secret_version.POSTGRES_PASSWORD.secret_string
+  skip_final_snapshot = true
+  port                = 5432
+  # vpc_security_group_ids = var.vpc_security_group_ids
+  db_subnet_group_name = aws_db_subnet_group.public_subnets.name
+  publicly_accessible  = true
 }
 
 data "aws_secretsmanager_secret" "POSTGRES_USERNAME" {
@@ -31,8 +32,9 @@ data "aws_secretsmanager_secret_version" "POSTGRES_PASSWORD" {
 }
 
 resource "aws_db_subnet_group" "public_subnets" {
-  name       = "public_subnets"
-  subnet_ids = var.public_subnet_ids
+  name = "public_subnets"
+
+  subnet_ids = var.public_subnets
 
   tags = {
     Name = "My DB subnet group"
