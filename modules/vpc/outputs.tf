@@ -1,11 +1,13 @@
 output "vpc_id" {
-  value = aws_vpc.vapourops_vpc.id
+  value = module.vpc.vpc_id
 }
 
-output "public_subnet_ids" {
-  value = aws_subnet.public_subnet[*].id
-}
 
-output "private_subnet_ids" {
-  value = aws_subnet.private_subnet[*].id
+output "private_subnets" {
+  description = "The IDs of the private subnets created"
+  value       = module.vpc.private_subnets
+}
+output "public_subnets" {
+  description = "The IDs of the public subnets created"
+  value       = module.vpc.public_subnets
 }

@@ -2,6 +2,6 @@ variable "vpc_security_group_ids" {
   type = list(string)
 }
 
-variable "public_subnet_ids" {
+variable "public_subnets" {
   type = list(string)
 }
