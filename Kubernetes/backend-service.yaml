@@ -7,6 +7,6 @@ spec:
     app: backend-server
   ports:
     - protocol: TCP
-      port: 3030
+      port: 8080
       targetPort: 8080
   type: LoadBalancer
