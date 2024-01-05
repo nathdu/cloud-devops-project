@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  backend-server
+  labels:
+    app.kubernetes.io/part-of: backend-server
+  annotations:
+    prometheus.io/port: "metrics-port"
+    prometheus.io/scrape: "true"
+spec:
+  selector:
+    app: backend-server
+  type:  LoadBalancer
+  ports:
+  - name:  "metrics-port"
+    port:  5050
+    targetPort:  8080

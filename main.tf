@@ -23,8 +23,7 @@ module "eks_cluster" {
   private_subnets = module.vpc.private_subnets
   cluster_name    = var.cluster_name
 }
-module "ecr" {
-  source = "./modules/ecr"
-  docker_image_name = var.docker_image_name
-
-}
+# module "ecr" {
+#   source = "./modules/ecr"
+#   docker_image_name = var.docker_image_name
+# }
