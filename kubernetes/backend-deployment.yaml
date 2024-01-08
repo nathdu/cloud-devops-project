@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: backend-server
 spec:
-  replicas: 1
+  progressDeadlineSeconds: 60
+  replicas: 2
+
   selector:
     matchLabels:
       app: backend-server
@@ -16,8 +18,8 @@ spec:
         - name: backend-server
           image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:31
           resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+            # limits:
+            #   memory: "128Mi"
+            #   cpu: "500m"
           ports:
           - containerPort: 8080
