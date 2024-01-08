@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: backend-server
-          image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:25 
+          image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:27
           resources:
             limits:
               memory: "128Mi"
               cpu: "500m"
           ports:
-            - containerPort: 8080
+          - containerPort: 8080
