@@ -10,4 +10,6 @@ variable "cluster_name" {
     variable "docker_image_name" {
   default = "java-server:1.0.0"
 }
-
+variable "db_password" {
+  type = string
+}
