@@ -43,6 +43,12 @@ resource "aws_security_group" "web_sg" {
     protocol    = "tcp"
     cidr_blocks = ["${chomp(data.http.myipaddr.response_body)}/32"]
   }
+  ingress {
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   # Egress Rule - Allow all outbound traffic
   egress {
