@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: frontend-server
-          image: public.ecr.aws/n8a4e9y6/vapourops-frontend:11
+          image: public.ecr.aws/n8a4e9y6/vapourops-frontend:13
           resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+            # limits:
+            #   memory: "128Mi"
+            #   cpu: "500m"
           ports:
             - containerPort: 80
