@@ -5,7 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/part-of: backend-server
   annotations:
-    prometheus.io/port: "metrics"
+    prometheus.io/path: "actuator/prometheus"
+    prometheus.io/port: '5005'
     prometheus.io/scrape: "true"
 spec:
   selector:
