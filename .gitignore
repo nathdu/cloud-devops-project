@@ -4,3 +4,4 @@ Terraform/*.tfstate
 terraform.tfstate.backup
 Terraform/modules/ecr/
 terraform.tfvars
+terraform.tfstate

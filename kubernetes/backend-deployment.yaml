@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend-server
-          image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:31
+          image: nathdu/vapourops-backend:1.0.0
           resources:
             # limits:
             #   memory: "128Mi"
