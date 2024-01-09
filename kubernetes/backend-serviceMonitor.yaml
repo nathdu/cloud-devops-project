@@ -6,7 +6,7 @@ metadata:
 spec:
   endpoints:
     - interval: 10s
-      port: actuator/info
+      port: metrics
       scrapeTimeout: 9s
   namespaceSelector:
     matchNames:
