@@ -14,5 +14,5 @@ spec:
     - name: metrics-port
       protocol: TCP
       port: 5005
-      targetPort: 8085
+      targetPort: 8080
   type: LoadBalancer
