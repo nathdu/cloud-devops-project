@@ -6,3 +6,4 @@ Terraform/modules/ecr/
 terraform.tfvars
 /pulumi/node_modules/
 terraform.tfstate
+/pulumi/utils/secrets.js
