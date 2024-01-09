@@ -2,5 +2,5 @@
 Terraform/*.tfstate
 .terraform.lock.hcl
 terraform.tfstate.backup
-modules/ecr
+Terraform/modules/ecr/
 terraform.tfvars
