@@ -14,3 +14,16 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/part-of: backend-server
+scrape_configs:
+  - job_name: 'backend-server'
+    static_configs:
+      - targets: ['localhost:5005'] 
+        labels:
+          instance: backend-server
+    scrape_interval: 15s
+
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __address__
+        regex: .*
+        replacement: localhost:5005
