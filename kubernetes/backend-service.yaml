@@ -11,7 +11,7 @@ spec:
   selector:
     app: backend-server
   ports:
-    - name: ping
+    - name: "ping"
       protocol: TCP
       port: 5005
       targetPort: 8080
