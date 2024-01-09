@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend-server
-          image: public.ecr.aws/n8a4e9y6/vapourops-frontend:25
+          image: public.ecr.aws/n8a4e9y6/vapourops-frontend:29
           resources:
             # limits:
             #   memory: "128Mi"
