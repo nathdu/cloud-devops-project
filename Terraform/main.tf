@@ -16,7 +16,7 @@ module "database" {
   source   = "./modules/database"
   vpc_security_group_ids = [module.security.web_sg_id]
   public_subnets = module.vpc.public_subnets
-  db_password = var.db_password
+  # db_password = var.db_password
 }
 module "eks_cluster" {
   source          = "./modules/eks"
