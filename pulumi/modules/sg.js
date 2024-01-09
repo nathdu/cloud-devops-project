@@ -3,6 +3,7 @@ const aws = require("@pulumi/aws");
 const awsx = require("@pulumi/awsx");
 const vpc = require("./vpc");
 const vars = require("../utils/vars")
+const secrets = requrie("../utils/secrets")
 
 const sg = new aws.ec2.SecurityGroup(`${vars.projectName}-sg`, {
   vpcId: vpc.vpcId,
@@ -23,7 +24,7 @@ const sg = new aws.ec2.SecurityGroup(`${vars.projectName}-sg`, {
       fromPort: 5432,
       toPort: 5432,
       protocol: "tcp",
-      cidrBlocks: [`${vars.myIp}/32`],
+      cidrBlocks: [`${secrets.myIp}/32`],
     },
   ],
   egress: [

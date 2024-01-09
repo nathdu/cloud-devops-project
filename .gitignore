@@ -5,3 +5,4 @@ terraform.tfstate.backup
 Terraform/modules/ecr/
 terraform.tfvars
 /pulumi/node_modules/
+/pulumi/utils/secrets.js
