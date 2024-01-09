@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: backend-server
   annotations:
-    prometheus.io/path: /actuator/prometheus
+    prometheus.io/path: "/actuator/prometheus"
     prometheus.io/port: metrics
     prometheus.io/scrape: "true"
 spec:
