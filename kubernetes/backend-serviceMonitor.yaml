@@ -6,8 +6,7 @@ metadata:
 spec:
   endpoints:
     - interval: 10s
-      # port: metrics-port
-      metrics_path: "actuator/metrics"
+      port: metrics-port
       scrapeTimeout: 9s
   namespaceSelector:
     matchNames:
