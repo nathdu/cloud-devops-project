@@ -3,10 +3,10 @@ kind: Service
 metadata:
 - name: backend-server
   labels:
-    app.kubernetes.io/part-of: cat-service
+    app.kubernetes.io/part-of: backend-server
   annotations:
-    prometheus.io/port: "metrics-port"
-    prometheus.io/scrape: "true"
+    prometheus.io/port: metrics-port
+    prometheus.io/scrape: true
 spec:
   selector:
     app: backend-server
