@@ -1,0 +1,6 @@
+name: vapourops
+runtime:
+  name: nodejs
+  options:
+    typescript: false
+description: vapourops javscript pulumi code
