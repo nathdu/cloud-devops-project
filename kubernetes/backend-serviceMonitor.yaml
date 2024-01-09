@@ -8,6 +8,7 @@ spec:
     - interval: 10s
       port: metrics
       scrapeTimeout: 9s
+      path: /actuator/prometheus
   namespaceSelector:
     matchNames:
       - default
