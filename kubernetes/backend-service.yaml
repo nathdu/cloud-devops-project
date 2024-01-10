@@ -5,23 +5,16 @@ metadata:
   labels:
     app.kubernetes.io/part-of: backend-server
   annotations:
-    prometheus.io/port: "metrics-port"
+    prometheus.io/path: "/actuator/prometheus"
+    prometheus.io/port: metrics
     prometheus.io/scrape: "true"
 spec:
   selector:
     app: backend-server
   type:  LoadBalancer
   ports:
-  - name:  "metrics-port"
-    port:  5005
-    targetPort:  8080
-
-#   name: backend-server
-# spec:
-#   selector:
-#     app: backend-server
-#   ports:
-#     - protocol: TCP
-#       port: 5005
-#       targetPort: 8080
-#   type: LoadBalancer
+    - name: metrics
+      protocol: TCP
+      port: 5005
+      targetPort: 8080
+  type: LoadBalancer
