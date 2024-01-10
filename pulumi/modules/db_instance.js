@@ -14,7 +14,7 @@ const db_instance = new aws.rds.Instance(`${vars.projectName}db`, {
     identifier:`${vars.projectName}db`,
     password:vars.dbPassword,
     port:5432,
-    publiclyAccessible:true,
+    // publiclyAccessible:true,
     skipFinalSnapshot:true,
     username:vars.dbUsername,
     vpcSecurityGroupIds:vpc.vpcSecurityGroupIds,
