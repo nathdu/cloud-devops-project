@@ -10,7 +10,7 @@ const db_instance = new aws.rds.Instance(`${vars.projectName}-db`, {
     allocatedStorage:20,
     dbName:`${vars.projectName}db`,
     engine:"postgres",
-    enginerVersion:"14.9",
+    engineVersion:"14.9",
     identifier:`${vars.projectName}db`,
     password:vars.dbPassword,
     port:5432,
