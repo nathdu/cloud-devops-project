@@ -5,7 +5,7 @@ const vpc = require("./vpc");
 const vars = require("../utils/vars")
 const db_subnetGroup = require("./db_subnetGroup")
 
-const db_instance = new aws.rds.Instance(`${vars.projectName}-db`, {
+const db_instance = new aws.rds.Instance(`${vars.projectName}db`, {
     instanceClass:"db.t3.micro",
     allocatedStorage:20,
     dbName:`${vars.projectName}db`,
