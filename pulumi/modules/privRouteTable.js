@@ -8,6 +8,7 @@ const privRouteTable = new aws.ec2.RouteTable("vapourops-priv-rt", {
     vpcId: vpc.vpcId,
     routes: [
         {
+            cidrBlock: "10.0.4.0/16",
             natGatewayId:vpc.natGatewayId
         },
     ],
