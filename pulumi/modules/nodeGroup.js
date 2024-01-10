@@ -9,13 +9,13 @@ const nodeGroup = new aws.eks.NodeGroup(`${vars.projectName}-nodeGroup`, {
     clusterName:cluster.name,
     nodeRoleArn:vars.roleArn,
     scalingConfig:{
-        minSize:1,
-        desiredSize:3,
-        maxSize:5
+        minSize:vars.nodeMin,
+        desiredSize:vars.nodeDesired,
+        maxSize:vars.nodeMax
     },
     subnetIds:vpc.privateSubnetIds,
-    amiType:"AL2_x86_64",
-    instanceTypes:["t3.small"],
+    amiType:vars.nodeAmiType,
+    instanceTypes:vars.nodeInstanceTypes,
     nodeGroupName:`${vars.projectName}-nodeGroup`
 })
 
