@@ -6,7 +6,7 @@ resource "aws_db_instance" "vapouropsdb" {
   engine_version    = "14.9"
   instance_class      = "db.t3.micro"
   manage_master_user_password = true
-  master_user_secret_kms_key_id = aws_kms_key.example.key_id
+  master_user_secret_kms_key_id = aws_kms_key.vapourops.key_id
   username            = "vapourops"
   # password            = var.db_password
   skip_final_snapshot = true
@@ -16,10 +16,13 @@ resource "aws_db_instance" "vapouropsdb" {
   publicly_accessible  = true
 }
 
-resource "aws_kms_key" "example" {
-  description = "Example KMS Key"
+resource "aws_kms_key" "vapourops" {
+  description = "VapourOps KMS Key"
 }
-
+resource "aws_kms_alias" "vapourops_alias" {
+  name          = "alias/VapourOps_Key"
+  target_key_id = aws_kms_key.vapourops.key_id
+}
 # data "aws_secretsmanager_secret" "POSTGRES_USERNAME" {
 #   name = "POSTGRES_USERNAME"
 # }
