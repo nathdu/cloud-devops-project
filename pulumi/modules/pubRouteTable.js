@@ -9,7 +9,7 @@ const pubRouteTable = new aws.ec2.RouteTable("vapourops-pub-rt", {
     routes: [
         {
             cidrBlock: "0.0.0.0/0",
-            gatewayId: vpc.gatewayId,
+            gatewayId: vpc.internetGateway.id,
         },
     ],
 });
