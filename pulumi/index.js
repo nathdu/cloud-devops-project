@@ -14,3 +14,5 @@ const {pubRouteTable,
 exports.vpcId=vpc.vpcId
 exports.vpcPrivSubnetIds = vpc.privateSubnetIds
 exports.vpcPubSubnetIds = vpc.publicSubnetIds
+exports.gatewayId=vpc.internetGateway.id
+exports.natGatewayId=vpc.natGateways
