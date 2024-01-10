@@ -1,43 +1,25 @@
 ## Prerequisites
 
-- **Pulumi CLI:** Install the Pulumi CLI on your machine. Instructions can be found [here](https://www.pulumi.com/docs/get-started/install/).
+- **Pulumi CLI:** Install the Pulumi CLI. Instructions can be found [here](https://www.pulumi.com/docs/get-started/install/).
 
-- **Cloud Provider Account:** Set up an account with your chosen cloud provider (AWS, Azure, GCP, etc.). Configure your credentials to authenticate Pulumi with your cloud account.
+- **Cloud Provider Account:** Configure your credentials to authenticate Pulumi with your cloud account. (The Provider used in this project is AWS)
 
-### Install Node.js
+- **Install Node.js:**
 
-If you haven't installed Node.js yet, download and install it from the official [Node.js website](https://nodejs.org/). npm comes bundled with Node.js, so installing Node.js will automatically install npm.
+Download and install from the official [Node.js website](https://nodejs.org/). npm comes bundled with Node.js, so installing Node.js will automatically install npm.
 
-### Initialize npm in your Pulumi project
 
-Run the following command to initialize npm for your Pulumi project:
 
-```bash
-npm init -y
-```
+### Install Dependencies
 
-This command initializes a new `package.json` file in your project directory with default values (-y flag skips the interactive setup).
-
-### Install Pulumi as a Dependency
-
-Pulumi should be added as a dependency to your project. Install the Pulumi CLI as a development dependency by running:
+Will install dependencies from the `package.json` file.
 
 For JavaScript/TypeScript projects:
 ```bash
-npm install @pulumi/pulumi --save-dev
+npm install 
 ```
 
-For other languages (Python, Go, etc.), use the appropriate Pulumi SDK package instead of `@pulumi/pulumi`.
 
-### Install Required Pulumi Providers
-
-For the AWS provider (based on your provided code snippets), install the `@pulumi/aws` package:
-
-```bash
-npm install @pulumi/aws
-```
-
-If you're using other cloud providers (Azure, GCP, etc.) or additional Pulumi packages for different services, install their respective Pulumi provider packages as needed.
 
 ## Module Overview
 
@@ -60,3 +42,9 @@ Node group within an existing EKS cluster using the AWS provider in Pulumi. It c
 ### Security Group
 
 AWS security group using Pulumi's AWS provider. It configures inbound and outbound rules for different ports, allowing or restricting access based on specified CIDR blocks. It also incorporates IP whitelisting for specific ports by restricting access to designated IP addresses.
+
+
+
+## Utils
+
+Use `vars.js` file to declare your variables and costumize the infrastructure to your needs.
