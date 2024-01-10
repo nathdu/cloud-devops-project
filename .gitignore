@@ -4,4 +4,6 @@ Terraform/*.tfstate
 terraform.tfstate.backup
 Terraform/modules/ecr/
 terraform.tfvars
+prom-test
 terraform.tfstate
+/pulumi/node_modules/

@@ -11,6 +11,7 @@ metadata:
 spec:
   selector:
     app: backend-server
+  type:  LoadBalancer
   ports:
     - name: metrics
       protocol: TCP
