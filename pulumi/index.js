@@ -13,7 +13,7 @@ const {pubRouteTable,
 const {
     pubSubnet1,
     pubSubnet2,
-} = require("./module/pubSubnets")
+} = require("./modules/pubSubnets")
 
 exports.vpcId=vpc.vpcId
 exports.vpcPrivSubnetIds = vpc.privateSubnetIds
