@@ -17,4 +17,4 @@ spec:
       protocol: TCP
       port: 5005
       targetPort: 8080
-  type: LoadBalancer
+
