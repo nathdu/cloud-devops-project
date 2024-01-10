@@ -28,6 +28,24 @@ const sg = new aws.ec2.SecurityGroup(`${vars.projectName}-sg`, {
       protocol: "tcp",
       cidrBlocks: [`${ip}/32`],
     },
+    {
+      fromPort: 22,
+      toPort: 22,
+      protocol: "tcp",
+      cidrBlocks: [`${ip}/32`],
+    },
+    {
+      fromPort: 3000,
+      toPort: 3000,
+      protocol: "tcp",
+      cidrBlocks: [`0.0.0.0/0`],
+    },
+    {
+      fromPort: 5432,
+      toPort: 5432,
+      protocol: "tcp",
+      cidrBlocks: [`0.0.0.0/0`],
+    },
   ],
   egress: [
     {
