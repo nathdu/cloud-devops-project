@@ -10,6 +10,10 @@ const db_instance = require("./modules/db_instance")
 const db_subnetGroup = require("./modules/db_subnetGroup")
 const {pubRouteTable,
     pubRouteTableAssociation} = require("./modules/pubRouteTable")
+const {
+    pubSubnet1,
+    pubSubnet2,
+} = require("./module/pubSubnets")
 
 exports.vpcId=vpc.vpcId
 exports.vpcPrivSubnetIds = vpc.privateSubnetIds
