@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-server
+  name: backend-deployment
 spec:
   progressDeadlineSeconds: 60
   replicas: 1
   selector:
     matchLabels:
-      app: backend-server
+      app: backend-deployment
   template:
     metadata:
       labels:
-        app: backend-server
+        app: backend-deployment
     spec:
       containers:
-        - name: backend-server
-          image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:39
+        - name: backend-deployment
+          image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:41
           resources:
             # limits:
             #   memory: "128Mi"

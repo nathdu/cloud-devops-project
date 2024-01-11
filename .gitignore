@@ -7,3 +7,4 @@ terraform.tfvars
 prom-test
 terraform.tfstate
 /pulumi/node_modules/
+kubernetes/metric.md

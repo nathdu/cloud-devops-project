@@ -5,6 +5,3 @@ variable "vpc_security_group_ids" {
 variable "public_subnets" {
   type = list(string)
 }
-# variable "db_password" {
-#   type = string
-# }
