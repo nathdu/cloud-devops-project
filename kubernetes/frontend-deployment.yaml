@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend-deployment
-          image: public.ecr.aws/s9e3l8e0/ce-team-project-frontend:17
+          image: public.ecr.aws/s9e3l8e0/ce-team-project-frontend:19
           resources:
             # limits:
             #   memory: "128Mi"
