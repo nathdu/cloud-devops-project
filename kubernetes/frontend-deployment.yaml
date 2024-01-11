@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: VapourOps-Frontend
+  name: frontend-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: VapourOps-Frontend
+      app: frontend-server
   template:
     metadata:
       labels:
-        app: VapourOps-Frontend
+        app: frontend-server
     spec:
       containers:
-        - name: VapourOps-Frontend
+        - name: frontend-server
           image: public.ecr.aws/s9e3l8e0/ce-team-project-frontend:17
           resources:
+            # limits:
+            #   memory: "128Mi"
+            #   cpu: "500m"
           ports:
             - containerPort: 80
