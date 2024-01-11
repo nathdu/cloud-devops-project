@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: VapourOps-Backend
+  name: VapourOps-Backend-Service
   labels:
-    app.kubernetes.io/part-of: VapourOps-Backend
+    app.kubernetes.io/part-of: VapourOps-Backend-Service
   annotations:
     prometheus.io/path: "/actuator/prometheus"
     prometheus.io/port: metrics
     prometheus.io/scrape: "true"
 spec:
   selector:
-    app: VapourOps-Backend
+    app: VapourOps-Backend-Deployment
   type:  LoadBalancer
   ports:
     - name: metrics
