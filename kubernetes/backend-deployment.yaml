@@ -1,24 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-server
+  name: VapourOps-Backend
 spec:
   progressDeadlineSeconds: 60
   replicas: 1
   selector:
     matchLabels:
-      app: backend-server
+      app: VapourOps-Backend
   template:
     metadata:
       labels:
-        app: backend-server
+        app: VapourOps-Backend
     spec:
       containers:
-        - name: backend-server
+        - name: VapourOps-Backend
           image: public.ecr.aws/s9e3l8e0/ce-team-project-backend:39
           resources:
-            # limits:
-            #   memory: "128Mi"
-            #   cpu: "500m"
           ports:
           - containerPort: 8080

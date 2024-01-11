@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: backend-server-monitor
+  name: VapourOps-Backend-monitor
   namespace: default
 spec:
   endpoints:
@@ -14,4 +14,4 @@ spec:
       - default
   selector:
     matchLabels:
-      app.kubernetes.io/part-of: backend-server
+      app.kubernetes.io/part-of: VapourOps-Backend
