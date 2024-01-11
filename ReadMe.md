@@ -48,3 +48,52 @@ AWS security group using Pulumi's AWS provider. It configures inbound and outbou
 ## Utils
 
 Use `vars.js` file to declare your variables and costumize the infrastructure to your needs.
+
+
+
+## CircleCI
+
+
+CircleCI is a continuous integration (CI) platform.
+
+    Modify .circleci/config.yml file in this project repository with your desired workflow.
+
+    Add CircleCI configuration to trigger deployments, run tests, or any other necessary tasks.
+
+    Configure your CircleCI project settings to include environment variables such as access tokens or AWS credentials for deployment.
+
+    Refer to the CircleCI documentation for detailed instructions on configuring and customizing your CI pipeline.
+
+
+
+## ArgoCD
+
+
+ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. To integrate ArgoCD with this project:
+
+    Follow the official ArgoCD installation guide to install ArgoCD in your Kubernetes cluster.
+
+    Configure ArgoCD to sync with your deployment by creating a new Application in the ArgoCD UI or using the ArgoCD CLI.
+
+
+
+## Prometheus
+
+
+[Prometheus](https://prometheus.io/) is an open-source monitoring and alerting toolkit designed for reliability and scalability. [Grafana](https://grafana.com/) is an open-source platform for monitoring and observability that works seamlessly with Prometheus. To integrate Prometheus and Grafana with this project:
+
+1. **Deploy Prometheus:**
+   - Follow the official [Prometheus installation guide](https://prometheus.io/docs/prometheus/latest/getting_started/) to deploy Prometheus in your Kubernetes cluster.
+   - Configure Prometheus to scrape metrics from relevant services in your infrastructure.
+
+2. **Deploy Grafana:**
+   - Install Grafana by following the [official Grafana installation guide](https://grafana.com/docs/grafana/latest/installation/).
+   - Set up Grafana data sources to connect to Prometheus for metrics.
+   - Create dashboards in Grafana to visualize the metrics collected by Prometheus.
+
+3. **Monitoring Infrastructure:**
+   - Update scripts or Helm charts to include Prometheus exporters or annotations for relevant services to expose metrics.
+
+4. **Configure Alerts:**
+   - Set up alerting rules in Prometheus to detect abnormal behavior or issues in your infrastructure.
+   - Configure Grafana to use Prometheus alerts and notify relevant channels.
