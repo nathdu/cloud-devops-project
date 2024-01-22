@@ -11,8 +11,8 @@ resource "aws_db_instance" "vapouropsdb" {
   skip_final_snapshot           = true
   port                          = 5432
   vpc_security_group_ids        = var.vpc_security_group_ids
-  db_subnet_group_name          = aws_db_subnet_group.public_subnets.name
-  publicly_accessible           = true
+  db_subnet_group_name          = aws_db_subnet_group.private_subnets.name
+  publicly_accessible           = false
 }
 
 resource "aws_kms_key" "vapourops" {
@@ -23,10 +23,10 @@ resource "aws_kms_alias" "vapourops_alias" {
   target_key_id = aws_kms_key.vapourops.key_id
 }
 
-resource "aws_db_subnet_group" "public_subnets" {
-  name = "public_subnets"
+resource "aws_db_subnet_group" "private_subnets" {
+  name = "private_subnets"
 
-  subnet_ids = var.public_subnets
+  subnet_ids = var.private_subnets
 
   tags = {
     Name = "My DB subnet group"
